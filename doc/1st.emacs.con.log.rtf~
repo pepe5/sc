@@ -1,0 +1,21 @@
+~> cd text/sc
+sc> git init
+Initialized empty Git repository in /root/text/sc/.git/
+
+sc> echo > README.rdoc
+sc> git add README.rdoc
+sc> git commit -m 'first commit'
+Created initial commit a717c4f: first commit
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 README.rdoc
+
+sc> git remote add origin git@github.com:pepe5/sc.git
+sc> git push origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 206 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:pepe5/sc.git
+ * [new branch]      master -> master
+
+sc> TERM=ansi; PS1='\W> '; stty cols 999                                                             
+sc> 

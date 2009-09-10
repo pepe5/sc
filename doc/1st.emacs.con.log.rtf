@@ -1,0 +1,67 @@
+Content-Type: text/enriched
+Text-Width: 70
+
+<x-color><param>chocolate1</param># -*- enriched -*-</x-color>
+<x-color><param>chocolate1</param># Hi-lock: (("# .*" (0 (quote font-lock-comment-face) t)))</x-color>
+<x-color><param>chocolate1</param># Hi-lock: (("^./.*.log" (0 (quote hi-yellow) t)))</x-color>
+<x-color><param>chocolate1</param># Hi-lock: ((".*>$ .*" (0 (quote font-lock-warning-face) t)))</x-color>
+<x-color><param>chocolate1</param># Hi-lock: (("^% .*" (0 (quote hi-red-b) t)))</x-color>
+<x-color><param>chocolate1</param># Hi-lock: (("^[^ ]+[]>] .*" (0 (quote hi-red-b) t)))</x-color>
+<x-color><param>chocolate1</param># Hi-lock: (("[[$.A-Z_a-z]+[@:].+].*" (0 (quote hi-blue-b) t)))</x-color>
+<x-color><param>red1</param>
+
+~> cd text/sc</x-color>
+<x-color><param>red1</param>sc> git init</x-color>
+Initialized empty Git repository in /root/text/sc/.git/
+
+<x-color><param>red1</param>
+
+sc> echo > README.rdoc</x-color>
+<x-color><param>red1</param>sc> git add README.rdoc</x-color>
+<x-color><param>red1</param>sc> git commit -m 'first commit'</x-color>
+Created initial commit a717c4f: first commit
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 README.rdoc
+
+<x-color><param>red1</param>
+
+sc> git remote add origin git@github.com:pepe5/sc.git</x-color>
+<x-color><param>red1</param>sc> git push origin master</x-color>
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 206 bytes, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:pepe5/sc.git
+ * [new branch]      master -> master
+
+<x-color><param>red1</param>
+
+sc> TERM=ansi; PS1='\W> '; stty cols 999                                                             </x-color>
+<x-color><param>red1</param>sc> (cd ../log; for i in * .[a-z]*; do [ -d $i ] && echo $i; done)</x-color>
+=v
+RCS
+doc
+ext-lib-lns
+int.lib
+test.src
+.git
+.links
+.test.in
+.test.logs
+.test.out
+<x-color><param>red1</param>
+sc> git add -a</x-color>
+error: unknown switch `a'
+<x-color><param>blue1</param>usage: git-add [options] [--] <<filepattern>...</x-color>
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           interactive patching
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+
+<x-color><param>red1</param>sc> git add .</x-color>
+<x-color><param>red1</param>sc> </x-color>
