@@ -49,19 +49,28 @@ test.src
 .test.logs
 .test.out
 <x-color><param>red1</param>
-sc> git add -a</x-color>
-error: unknown switch `a'
-<x-color><param>blue1</param>usage: git-add [options] [--] <<filepattern>...</x-color>
+sc> git add .</x-color>
+<x-color><param>red1</param>sc> git commit -a</x-color>
+Waiting for Emacs...
+fatal: no commit message?  aborting commit.
+<x-color><param>red1</param>
 
-    -n, --dry-run         dry run
-    -v, --verbose         be verbose
+sc> echo | git commit -a</x-color>
+Waiting for Emacs...
+Created commit 457ccd4: ..
+ 4 files changed, 102 insertions(+), 1 deletions(-)
+ create mode 120000 doc/.#1st.emacs.con.log.rtf
+ create mode 100644 doc/1st.emacs.con.log.rtf
+ create mode 100644 doc/1st.emacs.con.log.rtf~
+<x-color><param>red1</param>
 
-    -i, --interactive     interactive picking
-    -p, --patch           interactive patching
-    -f, --force           allow adding otherwise ignored files
-    -u, --update          update tracked files
-    --refresh             don't add, only refresh the index
-    --ignore-errors       just skip files which cannot be added because of errors
+sc> git push origin master</x-color>
+Counting objects: 9, done.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 1.90 KiB, done.
+Total 7 (delta 0), reused 0 (delta 0)
+To git@github.com:pepe5/sc.git
+   a717c4f..457ccd4  master -> master
+<x-color><param>red1</param>
 
-<x-color><param>red1</param>sc> git add .</x-color>
-<x-color><param>red1</param>sc> </x-color>
+sc> </x-color>
