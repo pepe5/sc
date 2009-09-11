@@ -1,0 +1,24 @@
+non smsc.docs>$ pushd /mnt/win/temp/tickets
+/mnt/win/temp/tickets /mnt/win/smsc.docs ~/mnt/kraljo@jubiler/home/kraljo/small-projects/cr15282-20-digits/.bak /mnt/win/temp
+
+non tickets>$ find . -type d | while read dir; do echo "$dir/*.[Dd][Oo][Cc]" "$dir/*.[Hh][Tt][Mm]*"; done | head
+non tickets>$ irb1.9 --simple-prompt
+>> require 'find'
+=> true
+
+>> puts `ls -alF #{l .join ' '}`
+-rwxr-xr-x 1 root root 1403392 Oct 22  2008 TP-TD-TR-CR14053-v02.doc*
+-rwxr-xr-x 1 root root  508928 Jun  9 08:34 TP_TD_TR-15707.doc*
+-rwxr-xr-x 1 root root  667648 Mar 31 06:57 tp-td-tr_cr15124.doc*
+=> nil
+
+>> l = (Dir .glob '*.[Dd][Oo][Cc]') + (Dir .glob '*.[Hh][Tt][Mm]*')
+=> ["TP-TD-TR-CR14053 ..v02.doc", "tp-td-tr_cr15124.doc", "TP_TD_TR-15707.doc"]
+
+>> puts `ls -alF "#{l .join '" "'}"`
+-rwxr-xr-x 1 root root 1403392 Oct 22  2008 TP-TD-TR-CR14053 ..v02.doc*
+-rwxr-xr-x 1 root root  508928 Jun  9 08:34 TP_TD_TR-15707.doc*
+-rwxr-xr-x 1 root root  667648 Mar 31 06:57 tp-td-tr_cr15124.doc*
+=> nil
+
+>> 

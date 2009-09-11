@@ -1,13 +1,13 @@
 # -*- rdoc -*-
-sc> (cd ../log; for i in * .[a-z]*; do [ -d $i ] && echo $i; done)
-=v # all files (vers.) archive
-RCS # tmp. texts archive
-doc # doc/s
-ext-lib-lns # links to ext parts
-int.lib # libs
-test.src # test srcs excl. in-data
-test.in # test in-data
-test.local # test run home - (l)ocal (o)utput (c)collector (al)l
-.git # tmp. texts archive (2)
-.links # all links
-.test.logs # tests stats judgements logs
+# <tt> sc> (cd ../log; for i in * .[a-z]*; do [ -d $i ] && echo $i; done) <tt>
+# =v:: all files (vers.) archive
+# RCS:: tmp. texts archive
+# doc:: doc/s
+# ext-lib-lns:: links to ext parts
+# int.lib:: libs
+# test.src:: test srcs excl. in-data
+# test.in:: test in-data
+# test.local:: test run home - (l)ocal (o)utput (c)collector (al)l
+# .git:: tmp. texts archive (2)
+# .links:: all links
+# .test.logs:: tests stats judgements logs
