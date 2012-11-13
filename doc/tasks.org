@@ -12,7 +12,11 @@
 
     - $> cd ~/opt/sc_agents
 *** $> python manage.py runserver 8009 &
-*** $> elinks -dump http://localhost:8009/stamp
+*** $> elinks -dump http://localhost:8009/stamp | perl -pe s/^\\s+//
+[13/Nov/2012 11:50:12] "GET /stamp HTTP/1.1" 301 0
+srv: 2012-11-13 17:50:12
+[13/Nov/2012 11:50:12] "GET /stamp/ HTTP/1.1" 200 25
+agnt: 2012-11-13 17:50:12
 
 
 * STU
