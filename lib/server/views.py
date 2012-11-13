@@ -33,8 +33,6 @@ def stream_tail(request):
 
 def stream_tail_generator (request):
     yield "<html><body>\n"
-    # for ln in subprocess.call (['tail', '-f', '/home/kraljo/tmp/1.txt']):
-    #     yield ('%s' % ln) + (" " * 1024)
     process = subprocess.Popen(['inotail','-f', '/home/kraljo/tmp/1.txt'], bufsize=1, stdout=subprocess.PIPE)
     while 1:
         ln = process.stdout.readline ()

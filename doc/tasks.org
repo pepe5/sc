@@ -1,9 +1,18 @@
 * SETUP
 ** git init
+   - $> cd ~/text/sc/lib/server
    - $> f=`echo ~/opt/sc_server/urls.py`; 
      ls -lt $f && mv -v $f . && ln -sv `pwd`/`basename $f` `dirname $f`;
      ls -lt $f
      ls -Hlt $f
+
+
+** web start
+*** $> killall inotail; (cd ~/opt/sc_server/; python manage.py runserver 8008) &
+
+    - $> cd ~/opt/sc_agents
+*** $> python manage.py runserver 8009 &
+*** $> elinks -dump http://localhost:8009/stamp
 
 
 * STU
