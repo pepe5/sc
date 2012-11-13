@@ -1,3 +1,4 @@
+-*- mode:org; mode:org-indent -*-
 * SETUP
 ** git init
    - $> cd ~/text/sc/lib/server
@@ -12,11 +13,20 @@
 
     - $> cd ~/opt/sc_agents
 *** $> python manage.py runserver 8009 &
+*** $> curl http://127.0.0.1:8008/polls-tail/ &
 *** $> elinks -dump http://localhost:8009/stamp | perl -pe s/^\\s+//
-[13/Nov/2012 11:50:12] "GET /stamp HTTP/1.1" 301 0
-srv: 2012-11-13 17:50:12
-[13/Nov/2012 11:50:12] "GET /stamp/ HTTP/1.1" 200 25
-agnt: 2012-11-13 17:50:12
+    [13/Nov/2012 11:50:12] "GET /stamp HTTP/1.1" 301 0
+    srv: 2012-11-13 17:50:12
+    [13/Nov/2012 11:50:12] "GET /stamp/ HTTP/1.1" 200 25
+    agnt: 2012-11-13 17:50:12
+
+
+** /ports-pair/
+*** http://stackoverflow.com/questions/247483/http-get-request-in-javascript
+    Note that this is subject to the Same Origin Policy. http://en.wikipedia.org/wiki/Same_origin_policy
+**** TODO try: Access-Control-Allow-Origin: http://example.com:8080 http://foo.example.com
+**** TODO try: http://loggly.com/blog/2011/12/enabling-cors-in-django-piston/
+   + /django access-control-allow-origin/ -> https://gist.github.com/426829
 
 
 * STU
