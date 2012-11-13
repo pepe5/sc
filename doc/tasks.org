@@ -5,9 +5,11 @@
      ls -lt $f
      ls -Hlt $f
 
+
 * STU
 ** https://docs.djangoproject.com/en/dev/intro/tutorial01/
 *** $> python manage.py syncdb
+
 
 ** django..
 *** [1/2] install
@@ -166,3 +168,6 @@
        ..
        /usr/share/doc/python-mako-0.3.4/examples/bench/django
 
+
+** git
+*** $> git log --graph --format="%ai %h --%d %s [ --%an ]" | perl -nle 'print "# $_"' | head
