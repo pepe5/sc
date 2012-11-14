@@ -27,6 +27,7 @@
 **** TODO try: Access-Control-Allow-Origin: http://example.com:8080 http://foo.example.com
 **** TODO try: http://loggly.com/blog/2011/12/enabling-cors-in-django-piston/
    + /django access-control-allow-origin/ -> https://gist.github.com/426829
+**** use [[Live HTTP Headers]]
 
 
 * STU
@@ -191,6 +192,9 @@
        ..
        /usr/share/doc/python-mako-0.3.4/examples/bench/django
 
+
+** gen. http
+*** Live HTTP Headers plugin
 
 ** git
 *** $> git log --graph --format="%ai %h --%d %s [ --%an ]" | perl -nle 'print "# $_"' | head
