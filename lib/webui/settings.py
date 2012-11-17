@@ -93,7 +93,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'sc_agents.webui_agent.views.SubdomainsMiddleware',
+    'sc_agents.webui_agent.views.AllowOriginMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

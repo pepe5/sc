@@ -26,6 +26,7 @@ def set_access_control_headers(response):
 from django.conf import settings
 import re
 
-class SubdomainsMiddleware:
+class AllowOriginMiddleware:
     def process_request(self, request):
         print repr (request.META['HTTP_HOST'])
+        stamptime (request)
