@@ -28,6 +28,12 @@
 **** TODO try: http://loggly.com/blog/2011/12/enabling-cors-in-django-piston/
    + /django access-control-allow-origin/ -> https://gist.github.com/426829
 **** use [[Live HTTP Headers]]
+**** TODO try http://blog.101ideas.cz/posts/subdomains-in-django-an-example.html
+
+
+* DEV / RUN
+** load /machine-card/
+*** TRY http://doc.scrapy.org/en/0.16/intro/overview.html
 
 
 * STU
@@ -36,6 +42,7 @@
 
 
 ** django..
+*** TODO :stu: https://code.djangoproject.com/wiki/Tutorials
 *** [1/2] install
 ***** DONE $> wget --progress=bar:force ftp://fr2.rpmfind.net/linux/epel/6/x86_64/Django-1.3.2-1.el6.noarch.rpm
 ***** :43_time: $> rpm -vi Django-1.4-1.fc17.noarch.rpm
@@ -55,7 +62,7 @@
        Congratulations on your first Django-powered page.
 ***** TODO install pip
 
-*** TODO [0/1] google: /django stream file/
+*** TODO [0/2] google: /django stream file/
      - [X] http://stackoverflow.com/questions/2922874/how-to-stream-an-httpresponse-with-django
            [[file:/home/kraljo/opt/django_try_1/polls/views.py::resp%20%3D%20HttpResponse(%20stream_response_generator(),%20mimetype%3D'text/html')][resp = HttpResponse( stream_response_generator(), mimetype='text/html')]]
      - [ ] http://stackoverflow.com/questions/1619397/how-to-start-a-long-running-process-from-django-view
@@ -157,6 +164,10 @@
 ******* try Twisted
 ******* try Celery
 
+
+***** TODO :stu: response.streaming_content = wrap_streaming_content(response.streaming_content)
+   - see https://docs.djangoproject.com/en/dev/topics/http/middleware/
+
 *** TODO google: /django wiki/
 *** file/s:
 ***** file:~/opt/django_try_1
@@ -164,6 +175,9 @@
 ***** file:~/tmp/weblog~4
 
 *** :43_time: Mezzanine - The Best Django CMS
+**** 3.2.1.2. Installing and configuring django CMS in your Django project
+   - http://docs.django-cms.org/en/2.2/getting_started/tutorial.html
+
 
 *** http://tech.foolpig.com/2010/08/30/python-django-nginx/
      - cd /opt/python26/lib/python2.6/site-packages/

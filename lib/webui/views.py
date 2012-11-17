@@ -20,3 +20,12 @@ def set_access_control_headers(response):
     response['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
     response['Access-Control-Max-Age'] = 1000
     response['Access-Control-Allow-Headers'] = '*'
+
+##
+# django access-control-allow-origin ?!
+from django.conf import settings
+import re
+
+class SubdomainsMiddleware:
+    def process_request(self, request):
+        print repr (request.META['HTTP_HOST'])
