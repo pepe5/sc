@@ -24,11 +24,16 @@
 ** /ports-pair/
 *** http://stackoverflow.com/questions/247483/http-get-request-in-javascript
     Note that this is subject to the Same Origin Policy. http://en.wikipedia.org/wiki/Same_origin_policy
-**** TODO try: Access-Control-Allow-Origin: http://example.com:8080 http://foo.example.com
-**** TODO try: http://loggly.com/blog/2011/12/enabling-cors-in-django-piston/
+**** try: Access-Control-Allow-Origin: http://example.com:8080 http://foo.example.com
+**** try: http://loggly.com/blog/2011/12/enabling-cors-in-django-piston/
    + /django access-control-allow-origin/ -> https://gist.github.com/426829
 **** use [[Live HTTP Headers]]
-**** TODO try http://blog.101ideas.cz/posts/subdomains-in-django-an-example.html
+**** try http://blog.101ideas.cz/posts/subdomains-in-django-an-example.html
+
+
+** mk stat/s col.
+*** it have to doc~ 'db', for now ~> (simply) key-map
+*** -> later s/t ~ redis
 
 
 * DEV / RUN

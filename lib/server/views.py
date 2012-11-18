@@ -32,7 +32,10 @@ def stream_tail(request):
     return resp
 
 def stream_tail_generator (request):
-    yield "<html><body>\n"
+    yield ''' <html><body>\n ''' + '''
+        <head> <style type="text/css">
+            body {font-family:sans;}
+         </style> </head> '''
     yield (''' <a href = "#0" ''' +
           ''' onclick = "javascript:xmlHttp = new XMLHttpRequest ();''' +
           ''' xmlHttp.open ('GET', 'http://localhost:8009/stamp', false);''' +
@@ -43,6 +46,9 @@ def stream_tail_generator (request):
     (['inotail','-f', '/home/kraljo/tmp/1.txt'], bufsize = 1, stdout = subprocess.PIPE)
     while 1:
         ln = process.stdout.readline ()
+        #>! process rmt cmd
+        #>! apply stat/s db changes
+        #>! gen. stat/s delta
         print "srv: %s" % ln,
         yield ('<br> %s' % ln) + (" " * 1024)
     yield "</body></html>\n"
