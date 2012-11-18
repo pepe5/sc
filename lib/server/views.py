@@ -33,14 +33,14 @@ def stream_tail(request):
 
 def stream_tail_generator (request):
     yield "<html><body>\n"
-    yield (''' <a href="#0" ''' +
-          ''' onclick="javascript:xmlHttp=new XMLHttpRequest();''' +
-          ''' xmlHttp.open('GET', 'http://localhost:8009/stamp', false);''' +
-          ''' xmlHttp.send(null); ''' +
+    yield (''' <a href = "#0" ''' +
+          ''' onclick = "javascript:xmlHttp = new XMLHttpRequest ();''' +
+          ''' xmlHttp.open ('GET', 'http://localhost:8009/stamp', false);''' +
+          ''' xmlHttp.send (null); ''' +
           ''' return false;''' +
           '''"> [stamp it!] </a> ''')
-    # made very strange html: # <a false;"="" return="" xmlhttp.send(null);="" false);="" stamp",="" localhost:8009="" "http:="" get",="" onclick="javascript:xmlHttp=new XMLHttpRequest(); xmlHttp.open(" href="#0"> [stamp it!] </a>
-    process = subprocess.Popen(['inotail','-f', '/home/kraljo/tmp/1.txt'], bufsize=1, stdout=subprocess.PIPE)
+    process = subprocess.Popen \
+    (['inotail','-f', '/home/kraljo/tmp/1.txt'], bufsize = 1, stdout = subprocess.PIPE)
     while 1:
         ln = process.stdout.readline ()
         print "srv: %s" % ln,

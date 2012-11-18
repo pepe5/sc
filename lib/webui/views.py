@@ -12,7 +12,7 @@ def stamptime (request):
     subprocess.call ('echo %s >> /home/kraljo/tmp/1.txt' % t, shell=True)
     response = HttpResponse ("agnt: %s" % t)
     set_access_control_headers (response)
-    print repr (response._headers)
+    # print repr (response._headers)
     return response
 
 def set_access_control_headers(response):
@@ -28,5 +28,5 @@ import re
 
 class AllowOriginMiddleware:
     def process_request(self, request):
-        print repr (request.META['HTTP_HOST'])
+        #>! use this to inform about PORT/s: print repr (request.META['HTTP_HOST'])
         stamptime (request)
