@@ -49,7 +49,7 @@ class States ():
 def stream_tail_generator (request):
     s = States ()
     yield ''' <html><body>\n ''' + '''
-        <head> <style type="text/css">
+         <head> <style type="text/css">
             body {font-family:sans;}
          </style> </head> '''
     yield (''' <a href = "#0" ''' +

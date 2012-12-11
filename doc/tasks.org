@@ -2,6 +2,12 @@
 ** :
 
 * DEV / RUN
+** TEXT: file:~/text/sc
+** env
+   - file:~/opt/sc_server
+   - file:~/opt/sc_agents
+
+
 ** load /machine-card/
 *** TRY http://doc.scrapy.org/en/0.16/intro/overview.html
 
@@ -217,4 +223,5 @@
 
 
 ** git
+*** e> . ~/bin/lk; git push &
 *** $> git log --graph --format="%ai %h --%d %s [ --%an ]" | perl -nle 'print "# $_"' | head
