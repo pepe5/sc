@@ -31,7 +31,13 @@ def stream_tail(request):
     resp = HttpResponse (stream_tail_generator (request), mimetype='text/html')
     return resp
 
+#>! replace States by (~memcached~ or by) sqlite model -- and move to models.py !
+class States (): pass
+class Value (): pass
 def stream_tail_generator (request):
+    s = States ()
+    s.stats = {}
+    s.stamps = []
     yield ''' <html><body>\n ''' + '''
         <head> <style type="text/css">
             body {font-family:sans;}
@@ -46,9 +52,9 @@ def stream_tail_generator (request):
     (['inotail','-f', '/home/kraljo/tmp/1.txt'], bufsize = 1, stdout = subprocess.PIPE)
     while 1:
         ln = process.stdout.readline ()
-        #>! process rmt cmd
+        #>! process rmt signals, run bg. agents on bigger needs
         #>! apply stat/s db changes
-        #>! gen. stat/s delta
+        #>! gen. stat/s delta & print it:
         print "srv: %s" % ln,
         yield ('<br> %s' % ln) + (" " * 1024)
     yield "</body></html>\n"

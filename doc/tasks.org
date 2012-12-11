@@ -1,4 +1,11 @@
 -*- mode:org; mode:org-indent -*-
+** :
+
+* DEV / RUN
+** load /machine-card/
+*** TRY http://doc.scrapy.org/en/0.16/intro/overview.html
+
+
 * SETUP
 ** git init
    - $> cd ~/text/sc/lib/server
@@ -34,11 +41,6 @@
 ** mk stat/s col.
 *** it have to doc~ 'db', for now ~> (simply) key-map
 *** -> later s/t ~ redis
-
-
-* DEV / RUN
-** load /machine-card/
-*** TRY http://doc.scrapy.org/en/0.16/intro/overview.html
 
 
 * STU
@@ -214,6 +216,7 @@
 
 ** gen. http
 *** Live HTTP Headers plugin
+
 
 ** git
 *** $> git log --graph --format="%ai %h --%d %s [ --%an ]" | perl -nle 'print "# $_"' | head
