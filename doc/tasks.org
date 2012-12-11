@@ -16,10 +16,8 @@
 
 
 ** web start
-*** $> killall inotail; (cd ~/opt/sc_server/; python manage.py runserver 8008) &
-
-    - $> cd ~/opt/sc_agents
-*** $> python manage.py runserver 8009 &
+*** $> (cd ~/opt/sc_server/; python manage.py runserver 8008 nextarg=123)
+*** $> (cd ~/opt/sc_agents; python manage.py runserver 8009) &
 *** $> curl http://127.0.0.1:8008/polls-tail/ &
 *** $> elinks -dump http://localhost:8009/stamp | perl -pe s/^\\s+//
     [13/Nov/2012 11:50:12] "GET /stamp HTTP/1.1" 301 0

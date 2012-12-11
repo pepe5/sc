@@ -31,13 +31,23 @@ def stream_tail(request):
     resp = HttpResponse (stream_tail_generator (request), mimetype='text/html')
     return resp
 
-#>! replace States by (~memcached~ or by) sqlite model -- and move to models.py !
-class States (): pass
+#>! replace States by (~memcached~ or by) sqlite model -- and move it to models.py !
 class Value (): pass
+class States ():
+    def States (s):
+        s.stats = {}
+        s.stamps = []
+
+    def idphase (s):
+        ''' identify appropriate phase - by evaluating check-list/s '''
+        pass
+
+    def inigen (s):
+        ''' initialize general holders '''
+        pass
+
 def stream_tail_generator (request):
     s = States ()
-    s.stats = {}
-    s.stamps = []
     yield ''' <html><body>\n ''' + '''
         <head> <style type="text/css">
             body {font-family:sans;}

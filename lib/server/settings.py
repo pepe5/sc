@@ -1,9 +1,9 @@
 # Django settings for sc_server project.
 
 import os, sys
-RUN_ARGS = sys.argv [3:]
-print 'pep> args: ' + repr (RUN_ARGS)
-sys.argv = sys.argv [:2]
+RUN_ARGS = sys.argv [4:]
+sys.argv = sys.argv [:3]
+print 'pep> mine arg/s: ' + repr (RUN_ARGS) + ' (argv/s: %s)' % sys.argv
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
