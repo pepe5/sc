@@ -31,6 +31,8 @@ def stream_tail(request):
     resp = HttpResponse (stream_tail_generator (request), mimetype='text/html')
     return resp
 
+from django.conf import settings
+
 #>! replace States by (~memcached~ or by) sqlite model -- and move it to models.py !
 class Value (): pass
 class States ():
@@ -47,6 +49,11 @@ class States ():
         pass
 
 def stream_tail_generator (request):
+    try:
+        print 'pep> ini.setttings: %s' % RUN_ARGS
+    except NameError:
+        print 'pep> ini.setttings not loaded?!'
+
     s = States ()
     yield ''' <html><body>\n ''' + '''
          <head> <style type="text/css">
