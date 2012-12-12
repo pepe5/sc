@@ -1,9 +1,15 @@
 # Django settings for sc_server project.
 
-import os, sys
-RUN_ARGS = sys.argv [4:]
-sys.argv = sys.argv [:3]
-print 'pep> mine arg/s: ' + repr (RUN_ARGS) + ' (argv/s: %s)' % sys.argv
+import os, re, sys
+try:
+    print 'pep> ini.stat: %s' % RUN_ARGS
+except NameError:
+    RUN_ARGS = sys.argv [3:]
+    sys.argv = sys.argv [:3]
+    print 'pep> 1st: arg/s: ' + repr (RUN_ARGS) + ' (argv/s: %s)' % sys.argv
+else:
+    print 'pep> 2nd: parse: ' + repr (RUN_ARGS)
+if not re.match ('^IN[0-9]|^GCM[0-9]', RUN_ARGS[0], re.I): raise ImproperlyConfigured
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG

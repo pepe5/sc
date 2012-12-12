@@ -222,6 +222,9 @@
 *** Live HTTP Headers plugin
 
 
+** pcs/s ctl
+*** $> ps afwux | cat -n | grep -C2 inotail
+
 ** git
 *** e> . ~/bin/lk; git push &
 *** $> git log --graph --format="%ai %h --%d %s [ --%an ]" | perl -nle 'print "# $_"' | head

@@ -23,7 +23,7 @@ def set_access_control_headers(response):
 
 ##
 # django access-control-allow-origin
-from django.conf import settings
+#(<) from django.conf import settings
 import re
 
 class AllowOriginMiddleware:
