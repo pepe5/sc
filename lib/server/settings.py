@@ -1,13 +1,10 @@
 # Django settings for sc_server project.
 
 import os, re, sys
-global RUN_ARGS
-print 'pep> test globals before: ' + repr (globals () .get ('RUN_ARGS', -1))
+print 'pep> test ARGS before all: ' + os.environ .get ('AAA_RUN_ARGS', '-')
 if len (sys.argv) > 3:
-    RUN_ARGS = sys.argv [3:]
+    os.environ ['AAA_RUN_ARGS'] = repr (sys.argv [3:])
     sys.argv = sys.argv [:3]
-    print 'pep> 1st: arg/s: ' + repr (RUN_ARGS) + ' (argv/s: %s)' % sys.argv
-print 'pep> test globals after: ' + repr (globals () .get ('RUN_ARGS', -1))
 
 #>? RUN_ARGS doesnt stay defined
 # else:
@@ -116,14 +113,11 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'sc_server.urls'
 
-#pep>
-TEMPLATE_DIRS = [
+TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-]
-if globals () .get ('RUN_ARGS', -1) != -1:
-    TEMPLATE_DIRS .append (RUN_ARGS)
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
