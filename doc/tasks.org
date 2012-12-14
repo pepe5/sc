@@ -48,11 +48,15 @@
 
 
 * STU
-** https://docs.djangoproject.com/en/dev/intro/tutorial01/
-*** $> python manage.py syncdb
+** [0/1] States..
+*** TODO >>> [(k,st[k]) for k in st if k .startswith ('1.')]
 
+**** >>> [k for k,v in d.iteritems() if v > 6]
 
 ** django..
+*** https://docs.djangoproject.com/en/dev/intro/tutorial01/
+**** $> python manage.py syncdb
+
 *** TODO :stu: https://code.djangoproject.com/wiki/Tutorials
 *** [1/2] install
 ***** DONE $> wget --progress=bar:force ftp://fr2.rpmfind.net/linux/epel/6/x86_64/Django-1.3.2-1.el6.noarch.rpm
