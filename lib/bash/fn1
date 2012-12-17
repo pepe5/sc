@@ -3,7 +3,7 @@ function d \
     { [[ ( -z $SSH_AUTH_SOCK ) || ( -x $SSH_AUTH_SOCK ) ]] && . lk;
     jobs > /tmp/sshg.jobs
     TICKET=$2; echo 1>&2 TICKET=$TICKET
-    CMD=`. ~/bin/sshd -x $* | perl -pe 's/\@sls\./\@..s5../; s/ -v / /'`
+    CMD=`. ~/bin/sshd -x $* | perl -pe 's/\@sls\./\@dbkpsas5\./; s/ -v / /'`
     if echo $@ | egrep '^-'; then TICKET=$3; fi # expecting ONLY 1 switch for now
     dtach -n ~/tmp/$TICKET.dtach -z bash
     commit.py $TICKET "PS1='$TICKET:\W$> '"
@@ -12,5 +12,6 @@ function d \
     #>! add also emacsclient request, formulating right .con.log file-name
     (sleep 2; commit.py $TICKET reset; commit.py $TICKET "logger -p user.info $TICKET") &
     dtach -a ~/tmp/$TICKET.dtach -z
-    #>! append here map/ws_stop, $FQDN need to be got yet by s/t~> sshd -d -x
+    FQDN=`sshd -d -x $1 $TICKET`
+    wget -O - "http://$WIKIP/map/ws_stop.php?h=$FQDN.com&t=$TICKET"
     echo;}

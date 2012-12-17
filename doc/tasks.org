@@ -53,6 +53,7 @@
 
 **** >>> [k for k,v in d.iteritems() if v > 6]
 
+
 ** django..
 *** https://docs.djangoproject.com/en/dev/intro/tutorial01/
 **** $> python manage.py syncdb
@@ -226,8 +227,16 @@
 *** Live HTTP Headers plugin
 
 
-** pcs/s ctl
+** [0/1] pcs/s ctl
 *** $> ps afwux | cat -n | grep -C2 inotail
+*** TODO instead of (separate django projects-) agents -> use Twisted or Motor or [[https://www.google.com/search%3Fq%3Ddjango%2Btasks][dj.Tasks]] -
+*** - we would need it for Actor~ model -
+   - ~ in task/s detection - this should wait as Actor for getting ANON about filled needed info cache
+
+
+*** agent/s should hold raw cache (~wget outputs) -
+*** - state/db should hold most relevant assessments from that
+
 
 ** git
 *** e> . ~/bin/lk; git push &
